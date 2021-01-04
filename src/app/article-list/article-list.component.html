@@ -1,0 +1,13 @@
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+    <label>Name:</label>
+    <input formControlName="name"/>
+    <label>Ref:</label>
+    <input formControlName="reference"/>
+    <input type="submit" [disabled]="!articleForm.valid"/>
+</form>
+
+<div>
+    <ul>
+        <li *ngFor="let article of articles">{{article.name}}</li>
+    </ul>
+</div>
